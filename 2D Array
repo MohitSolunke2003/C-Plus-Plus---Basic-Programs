@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n,m;                             //Take input from user for 2D Array
+    cout<<"Enter the values of n & m:";  //n = rows , m = colnm
+    cin>>n>>m;                            
+    
+    int arr[n][m];                       // Take i/p from user for 2D Array
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin>>arr[i][j];
+        }
+        
+    }
+    
+cout<<"Matrix is"<<endl;                                            
+                                        // Print the 2D array
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+        cout<<arr[i][j]<<" ";
+    }
+    cout<<"\n";
+}
+
+return 0;
+}
