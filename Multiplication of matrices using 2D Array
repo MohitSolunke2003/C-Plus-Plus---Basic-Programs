@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n1,n2,n3;
+    cout<<"Enter the size for 2 matrix = ";
+    cin>>n1>>n2>>n3;                       //Take input size of matrices
+    
+    int m1[n1][n2];                       //Declare 2 Matrix for multipliccation
+    int m2[n2][n3];
+    
+    //Take inputs for 1st matrix
+    
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n2;j++)
+        {
+            cin>>m1[i][j];
+        }
+    }
+    
+    //Take inputs for 2nd matrix
+    
+    for(int i=0;i<n2;i++)
+    {
+        for(int j=0;j<n3;j++)
+        {
+            cin>>m2[i][j];
+        }
+    }
+    
+    //form a ans matrix for to store multiplication result
+    
+    int ans[n1][n3];
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n3;j++)
+        {
+            ans[i][j]=0;
+        }
+    }
+    
+    //operation loop
+    
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n3;j++)
+        {
+            for(int k=0;k<n2;k++)
+            {
+                ans += m1[i][k]*m2[k][j];
+            }
+        }
+    }
+    
+    //Dispaly the result of multiplication 
+    
+    for(int i=0;i<n1;i++)
+    {
+        for(int j=0;j<n3;j++)
+        {
+            cout<<ans[i][j] <<" ";
+            
+        }
+        cout<<"\n";
+    }
+    
+    return 0;
+}
