@@ -1,0 +1,40 @@
+//Check wether world is Palindrome or not. 
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    
+    int n;
+    cin>>n;
+    
+//Declare the size of world
+    
+    char arr[n+1];    
+    cin>>arr;
+   
+//Check one by one letter by using for loop
+   bool check=true;
+   
+   for(int i=0;i<n;i++)
+   {
+       if(arr[i]!=arr[n-1+i])
+       {
+           check=false;
+           break;
+       }
+   }
+   
+   
+   if(check==true)
+   {
+       cout<<"World / sentence is palindrome."<<endl;
+   }
+   else
+   {
+       cout<<"World / sentence is palindrome."<<endl
+   }
+   return 0;
+   
+} 
