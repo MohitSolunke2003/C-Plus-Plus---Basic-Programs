@@ -12,14 +12,13 @@ int main()
     //Declare the size of sentences .
     //Use getline() function for take complete line input.
     //use ignore() function for avoiding buffer.
-    
     char arr[n+1];
     cin.getline(arr,n);
     cin.ignore();
     
     int i=0;
     int currlen = 0,maxlen = 0;
-    
+    int st = 0, maxst = 0;
     while(1)
     {
         if(arr[i] ==' '|| arr[i] == '\0')
@@ -27,9 +26,11 @@ int main()
             if(currlen>maxlen)
             {
                 maxlen=currlen;
+                maxst=st;
                 
             }
             currlen=0;
+            st=i+1;
         }
         
         else
@@ -46,6 +47,10 @@ int main()
     }
     
     cout<<maxlen<<endl;
+    for(int i=0;i<maxst;i++)
+    {
+        cout<<arr[i+maxst]<<endl;
+    }
     return 0;
     
 }
