@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    //largest word in sentence
+    int n;
+    cin>>n;
+    cin.ignore();
+    
+    char arr[n+1];
+    cin.getline(arr,n);
+    cin.ignore();
+    
+    cout<<"Your character array is as follow 👇"<<endl;
+    cout<<arr;
+    return 0;
+  
+}
