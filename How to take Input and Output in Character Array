@@ -1,0 +1,18 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter the size of array = ";
+    cin>>n;
+    char arr[n+1];
+    cout<<"Enter the character array :"<<endl;
+    cin>>arr;
+    cout<<"Your character array is : "<<endl;
+    cout<<arr;
+        
+    return 0;
+    
+}
