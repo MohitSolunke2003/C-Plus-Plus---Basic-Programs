@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a=10;
+    
+    int *p = new int();     // Allocate memory in Heap for variable
+    *p=10;
+      
+    delete(p);             //Deallocate Memory in Heap
+    
+    p=new int[4];          //Allocate Memory For array in Heap
+    
+    delete[]p;             // Deallocate Memory For Array in Heap
+    
+    p=NULL ;              // REmove the Pointer from stack also
+     
+    return 0;
+    
+}
