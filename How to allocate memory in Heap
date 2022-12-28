@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a=10;
+    
+    int *p = new int();                                     // Allocate memory in Heap for variable
+    *p=10;
+    
+    delete(p);                                            //Deallocate Memory in Heap
+    
+    cout<<"Your value store in Heap is = "<<*p;
+    
+    return 0;
+    
+}
