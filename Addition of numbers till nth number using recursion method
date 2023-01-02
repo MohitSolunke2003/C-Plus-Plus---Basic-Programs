@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+//here sum function called again and again
+//they behave as recursion function
+int sum(int n)  
+{
+    if(n==0)
+    {
+        return 0;
+    }
+    int presum = sum(n-1);
+    return n+presum ;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    cout<<sum(n)<<endl;
+    return 0;
+}
