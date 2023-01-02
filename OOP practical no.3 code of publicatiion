@@ -1,0 +1,104 @@
+vector<datatype>v1;
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class publication
+{   
+    private:
+    string title;
+    float price;
+    public:
+    input()
+    {
+        cout<<"\n Enter the Title of Publication ";
+        cin>>title;
+        cout<<" \n Enter the price of Publication ";
+        cin>>price;
+        
+    }
+    output()
+    {
+        cout<<"Title of Production is : "<<title<<endl;
+        cout<<"Price of Production is : "<<price<<endl;
+    }
+};
+
+class book : public Publication
+{
+    public:
+          int pagecount;
+         void intputpage()
+         {
+             input();
+              try
+              {
+                  cout<<"enter the pagecount = ";
+                  cin>>pagecount;
+                  
+                  if(pagecount <=0)
+                  {
+                      throw(pagecount);
+                  }
+              }
+              catch(int pagecount)
+              {
+                  cout<<"Invalid Input Pagecount"<<endl;
+                  pagecount = 0;
+              }
+         }
+              void displaypage(){
+                  cout<<"Pagecount is : "<<pagecount<<endl;
+              }
+};
+          
+class tape : public Publication
+{
+    public:
+          int timecount;
+          void inputtime()
+          {
+              input();
+              cout<<"Enter the timecount = ";
+              cin>>timecount;
+              
+              if(timecount <= 0)
+              {
+                  throw (timecount);
+                  
+              }
+              catch(int timecount)
+              {
+                  cout<<"Invalid input timecount"<<endl;
+                  timecount = 0;
+              }
+          }
+          void dispalytime{
+              output();
+              cout<<"Timecount = "<<timecount<<endl;
+          }
+    
+};
+
+int main()
+{
+    book b[10];
+    tape t[10];
+    int ch, bookcount=0,tapecount=0;
+    
+    while(true)
+    {
+        cout<<"1) Add Book information "<<endl;
+        cout<<"2) Add tape information"<<endl;
+        cout<<"3) Display the book Information"<<endl;
+        cout<<"4) Display the tape information "<<endl;
+        cout<<"5) Exit";
+        
+        cout<<"Enter your choice = ";
+        cin>>ch;
+        
+        switch(ch)
+    }
+}
+
+  
