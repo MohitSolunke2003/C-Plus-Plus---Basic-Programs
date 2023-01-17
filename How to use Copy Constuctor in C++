@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+
+class test 
+{
+    int x;
+    public:
+            test();
+            test(int val)   //Parametrized Constructor
+            {
+                x = val;
+            }
+            
+            test(test & obj)  // Copy Constructor
+            {
+                x=obj.x;
+            }
+            
+            void show()
+            {
+                cout<<x<<endl;
+            }
+};
+
+int main()
+{
+    test old(100);
+    test new (old);
+    
+cout<<"Original value of x is = " <<old.show()<<endl;
+cout<<"Copy value of x is = "<<new.show;
+return 0;
+    
+}
