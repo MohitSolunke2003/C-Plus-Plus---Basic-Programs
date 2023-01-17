@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+class image
+{
+    int height ,width;
+    public:
+            image(int ,int);
+            ~image();
+            int area();
+};
+
+image :: image(int x,int y)
+{
+    height = x;
+    width = y;
+}
+
+image :: ~image()   //Destructor
+{
+}
+int image :: area()
+{
+    return (height *width);
+}
+
+int main()
+{
+image obj(10,10);
+cout<<"Area is  : "<<obj.area()<<endl;
+return 0;
+}
