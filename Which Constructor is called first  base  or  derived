@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+class base
+{
+    public:
+            base()
+            {
+                cout<<" Base class Constructor "<<endl;
+            }
+            ~base()
+            {
+                cout<<"Base Class Distructor "<<endl;
+            }
+};
+
+class derive : public base
+{
+    public:
+            derive()
+            {
+                cout<<"Derive Class Constructor :"<<endl;
+            }
+            ~derive()
+            {
+                cout<<"Derive Class Distructor"<<endl;
+            }
+};
+
+int main()
+{
+    derive obj;
+}
