@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+class image
+{
+    private:
+            int height,Width;
+    public:
+            image(int x,int y)  //   Paramtrize Constructor 
+            {
+                height = x;
+                Width = y;
+            }
+            
+            int area ()
+            {
+                return (height *Width);
+            }
+};
+int main()
+{
+    image obj(5,5);
+    cout<<"Area of Image is : "<<obj.area()<<endl;
+    return 0;
+}
