@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+class outer
+{
+public:
+int a; //Note thatthis member is public
+class inner   //Nested Inner class
+{
+public:
+void fun(outer *o,int val)
+{
+o->a =val;
+cout<<"a= "<<o->a;
+}
+};  //End of Inner Class
+};  // End of Outer class
+int main()
+{
+outer obj1;
+outer::inner obj2;
+obj2.fun(&obj1,10); //invoking the function :of inner class R
+return 0;
+}
