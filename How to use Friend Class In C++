@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+class A
+{
+    int data;
+    friend class B;     // Class B is Friend Class A
+    public:
+            A()
+            {
+                data = 5;
+            }
+};
+class B
+{
+    public:
+            int sub()
+            {
+                A obj1; // Object of Class A
+                return obj1.data;  // Using Friend class we can Access the private member in class B
+                
+            }
+};
+
+int main()
+{
+    A obj1;
+    B obj2;
+    obj2.sub();
+    return 0;
+}
