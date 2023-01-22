@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+class vector 
+{
+    public:
+    int p,q;
+    
+    vector()                                     // Default Constructor
+    {
+        p=0;
+        q=0;
+    }
+    vector(int,int);                           // Paramatrize constructor
+    vector operator +(vector);                 // Definiation of Operator overloading
+};
+
+vector :: vector(int a,int b)
+{
+    p=a;
+    q=b;
+}
+vector vector::operator + (vector obj)
+{
+    vector temp;
+    temp.p = p + obj.p;
+    temp.q = q + obj.q;
+    return (temp);
+}
+
+int main()
+{
+    vector a(10,20);
+    vector b(1,10);
+    vector c;
+    c = a + b;
+    cout<<"Addition of two vector is :"<<endl;
+    cout<<c.p <<"and"<<c.q<<endl;
+    return 0;
+}
