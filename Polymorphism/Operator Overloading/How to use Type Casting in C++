@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+class test
+{
+    public :
+    operator int();
+};
+
+test :: operator int()            //Synatax of Type Casting
+{
+    int sum;
+    sum = 5;
+    return(sum);
+}
+int main()
+{
+    test obj;
+    int x;
+    x =10;
+    cout<<"\nvalue of x is : "<<x<<endl;
+    x = int(obj);
+    cout<<"Value of x that asign by class : "<<x;
+    
+    return 0;
+}
