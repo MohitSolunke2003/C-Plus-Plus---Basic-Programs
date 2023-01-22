@@ -1,0 +1,20 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+int main()
+{
+    char s1[]= "Mohit";
+    char s2[] = "Swaraj";
+    
+    int compare = strcmp(s1,s2);   //Compare the Strings
+    
+    if(compare>0)
+    cout<<"Greater"<<endl;
+    else if(compare == 0)
+    cout<<"Equal"<<endl;
+    else
+    cout<<"Smaller"<<endl;
+    
+    return 0;
+}
