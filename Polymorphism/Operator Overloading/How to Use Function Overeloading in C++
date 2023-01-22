@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+class Base
+{
+    public :
+           void fun()
+           {
+               cout<<"\nFuction with default Parameter : ";
+               
+           }
+           void fun(int x,int y)
+           {
+               cout<<"\nFunction With Parameters : ";
+               int sum;
+               sum = x+y;
+               cout<<"\n      Sum of two numbers is : "<<sum;
+           }
+};
+int main()
+{
+    cout<<"\nUse Function  Overloading...!!! ";
+    Base b;
+    b.fun();
+    b.fun(10,20);
+    return 0;
+}
