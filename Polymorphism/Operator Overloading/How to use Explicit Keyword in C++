@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+class test 
+{   int val;
+    public:
+    explicit test (int x): val(x)  //use Explicit keyword to convert                     
+    {                               //conversion Constructor to non Conversion Constructor.
+   
+        cout<<"\n val = "<<val;
+    };
+    
+};
+int main()
+{
+    test obj(100);
+    return 0;
+}
