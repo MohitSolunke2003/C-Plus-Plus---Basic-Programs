@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+#define size 80
+int stack[size];
+int top1=-1,top2=size;
+
+void push(int item,int stackno)
+{
+    if(stackno==1)
+    {
+        if(top1+1==top2)
+            cout<<"Stack is Full..!!\n";
+        top1++;
+        stack[top1]=item;
+    }
+    else
+    {
+        if(top2-1==top1)
+            cout<<"Stack is full..!!\n";
+        stack[top2]=item;
+        top2--;
+    }
+}
+int pop(int stackno)
+{
+    int item;
+    if(stackno ==1)
+    {
+        if(top1 == -1)
+            cout<<"stack is empty..!!\n";
+        item = stack[top1];
+        top1--;
+        return(item);
+    }
+    else
+    {
+        if(top2 == size)
+            cout<<"Stack is Empty..!!\n";
+        item =stack[top2];
+        top2--;
+        return(item);
+    }
+}
+
+// int main()
+{
+    push(10,1);
+}
