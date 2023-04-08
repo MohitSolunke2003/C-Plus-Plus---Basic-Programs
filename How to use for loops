@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    int sum = 0;
+    cout<<"enter the value of n :- ";
+    cin>>n;
+    
+    for (int counter = 1;counter<=n;counter++)
+    {
+        sum = sum + counter;
+    }
+    cout<<"Sum is :- "<<sum;
+    return 0;
+}
