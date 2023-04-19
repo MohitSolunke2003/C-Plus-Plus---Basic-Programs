@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+    int arr[]={10,20,30};
+    cout<<*arr<<endl;
+
+    int *ptr = arr;
+    for(int i=0;i<3;i++)
+    {
+        cout<<*(arr+i)<<endl; // Ligel way to print array using pointer
+        ///cout<<*arr<<endl;  // iligle way --||--
+        //arr++
+
+        // cout<<*ptr<<endl;  // using a pointer varialbe we can -print a array;
+        // ptr++;
+
+    }
+    return 0;
+}
