@@ -1,0 +1,43 @@
+// #include<iostream>
+// using namespace std;
+
+// class Student
+// {
+//     public:
+//     string name;
+//     int age ;
+//     bool gender ;
+
+//     void setdata()
+//     {
+//         cout<<"Enter the name =";
+//         cin>>name;
+//         cout<<"Enter the age =";
+//         cin>>age;
+//         cout<<"Enter the gender =";
+//         cin>>gender;
+//     }
+
+//     void displaydata()
+//     {
+//         cout<<"Name = "<<name<<endl;
+//         cout<<"Age = "<<age<<endl;
+//         cout<<"Gender = "<<gender<<endl;
+
+//     }
+
+    
+// };
+
+// int main()
+// { 
+//     Student a;
+//     a.setdata(); 
+
+//     cout<<"Student Information System "<<endl;
+//     a.displaydata();
+
+
+// return 0;
+
+// }
