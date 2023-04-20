@@ -1,0 +1,30 @@
+// Binary Sysytem Conversions
+
+// #include<iostream>
+// using namespace std;
+
+// int BinaryTodecimal(int n)
+// {
+//     int x=1;
+//     int ans;
+//     int result= 0;
+//     while(n>0)
+//     {
+//         int y=n%10;
+//          ans = x *y;
+//          result = result+ans;
+//           x*=2;
+//          n=n/=10;
+//     }
+
+//     return result;
+// }
+// int main()
+// {
+//     int n;
+//     cin>>n;
+
+//     int ans = BinaryTodecimal(n);
+//     cout<<ans<<endl;
+//     return 0;
+// }
