@@ -1,0 +1,36 @@
+// Function Overloading 
+
+#include<iostream>
+using namespace std;
+
+class Apnaroom
+{
+    public:
+          
+          void fun()
+          {
+            cout<<"Function with no arguments"<<endl;
+          }
+          void fun(int x)
+          {
+            cout<<"Function with arguments"<<endl;
+          }
+
+          void fun(double x)
+          {
+            cout<<"Function with double arguments"<<endl;
+          }
+};
+
+
+
+int main()
+{
+    Apnaroom A;
+    A.fun();
+    A.fun(4);
+    A.fun(6.2);
+
+    return 0;
+
+}
