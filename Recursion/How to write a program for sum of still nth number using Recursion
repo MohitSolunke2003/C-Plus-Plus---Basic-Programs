@@ -1,0 +1,22 @@
+//To find a sum Still nth Number using recursion
+#include<iostream>
+using namespace std;
+
+int sum(int n)
+{
+    if(n==0)
+    {
+        return 0;
+    }
+    int prevSum = sum(n-1);
+    return n+prevSum;
+}
+int main()
+{
+    int n;
+    cin>>n;
+
+    int mohit = sum(n);
+
+    cout<<mohit<<endl;
+    return 0;
