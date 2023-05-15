@@ -1,0 +1,78 @@
+// BUILD THE TREE FROM INORDER AND POSTORDER 
+
+#include<iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    struct Node*left;
+    struct Node*right;
+
+    Node(int val)
+    {
+        data = val;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+int search(int inorder[],int start,int end,int curr)
+{
+    for(int i=0;i<end;i++)
+    {
+        if(curr==inorder[i])
+        {
+            return i;
+        }
+    }
+    return -1;
+
+}
+
+Node*Buildtree(int postorder[],int inorder[],int start,int end)
+{
+    static int idx = 4;
+    if(start >  end)
+    {
+        return NULL;
+    }
+    int curr = postorder[idx];
+    idx--;
+
+    Node*node = new Node(curr);
+    if(start == end)
+    {
+        return node;
+    }
+    int pos = search(inorder,start,end,curr);
+    node->right = Buildtree(postorder,inorder,pos+1,end);
+    node->left=Buildtree(postorder,inorder,start,pos-1);
+
+    return node;
+}
+
+void printinorder(Node*root)
+{
+    if(root == NULL)
+    {
+        return;
+    }
+    printinorder(root->left);
+    cout<<root->data<<" ";
+    printinorder(root->right);
+}
+ int main()
+{
+    int postorder[] ={4,2,5,3,1};
+    int inorder[] = {4,2,1,5,3};
+
+    //Build Tree 
+
+    Node* root = Buildtree(postorder,inorder,0,4);
+    printinorder(root);
+    cout<<endl;
+
+  
+    return 0;
+}
