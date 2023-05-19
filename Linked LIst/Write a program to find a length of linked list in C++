@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+
+class node
+{
+    public:
+       int data;
+       node* next;
+
+    node(int val)
+    {
+        data = val;
+        next = NULL;
+    }
+};
+void insertatTail(node* &head,int val)
+{
+    node* n=new node(val);
+    if(head == NULL)
+    {
+        head =n;
+        return ;
+    }
+    node*temp=head;
+    while(temp->next!=0)
+    {
+        temp=temp->next;
+    }
+    temp->next=n;
+
+}
+int length(node*&head)
+{
+    int l=1;
+    node*temp = head;
+
+    while(temp->next=NULL)
+    {
+        l++;
+        temp=temp->next;
+    }
+    return l;
+}
+
+int main()
+{
+    node*head1= NULL;
+   
+    insertatTail(head1,1);
+    insertatTail(head1,2);
+    insertatTail(head1,3);
+    insertatTail(head1,4);
+    
+    cout<<length(head1)<<endl;
+
+
+    return 0;
+
+}
