@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class node
+{
+    public:
+       int data;
+       node* next;
+
+    node(int val)
+    {
+        data = val;
+        next = NULL;
+    }
+};
+void deleteathead(node* &head)
+{
+    node*todelete = head;
+    head =head->next;
+
+    delete(todelete);
+}
+int main()
+{
+    node*head1= NULL;
+
+    insertatTail(head1,1);
+    insertatTail(head1,2);
+    insertatTail(head1,3);
+    insertatTail(head1,4);
+   
+   deleteathead(head1);
+
+    return 0;
+
+}
