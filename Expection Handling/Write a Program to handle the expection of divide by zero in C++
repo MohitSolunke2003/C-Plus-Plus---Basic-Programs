@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    double i,j;                           //Declare variables
+    void divide(double,double);           //member function declaration
+        cout<<"Enter the Numrator : ";    // input the variables
+        cin>>i;
+        cout<<"Enter the Denomrator : ";
+        cin>>j;
+        divide(i,j);                      // call to the member function
+        return 0;
+}
+void divide(double a,double b)            // define member function
+{
+    try                                   // detect the error in try block                               
+    {
+        if(b==0)
+            throw b;                      // Throwing the error using throw keyword
+        cout<<"Result : "<<a/b<<endl;
+    }
+    catch(double b)                       // handle the error in catch block
+    {
+        cout<<"\nCan't Divide by 0";
+    }
+}
