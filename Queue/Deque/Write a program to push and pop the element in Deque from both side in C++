@@ -1,0 +1,29 @@
+#include<iostream>
+#include<deque>             //Header file of deque
+using namespace std;
+
+int main()
+{
+    deque<int>dq;            // Declaration of deque
+    dq.push_back(1);         // Push the element from back side
+    dq.push_back(2);
+    dq.push_front(3);        // Push the element from front side
+    dq.push_front(4);
+
+    for( auto i : dq)      // Shows the elements of the deque
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    dq.pop_back();        // pop the element from back side 
+    dq.pop_front();       // pop the element from frony side 
+
+    for(auto i :dq )
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+    cout<<dq.size()<<endl;   // give the size of current deque
+    return 0;
+
+}
