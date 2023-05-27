@@ -1,0 +1,25 @@
+//Implimentation of array in STL
+
+#include<iostream>
+#include<array>
+using namespace std;
+
+int main()
+{
+    array<int,4>a = {1,2,3,4};
+
+    // int size = a.size();         // Print using a[] or 👇
+    // for(int i =0 ;i<size;i++)
+    // {
+    //     cout<<a[i]<<" ";
+    // }
+
+    cout<<"Element at secound index : "<<a.at(2)<<endl;   // Like wise also print the element using at keyword
+    cout<<"Empty or not : "<<a.empty()<<endl;
+
+    // We can print first and last element of the array
+    cout<<"First Element is : "<<a.front()<<endl;
+    cout<<"last Element  is : "<<a.back()<<endl;
+    return 0;
+
+}
