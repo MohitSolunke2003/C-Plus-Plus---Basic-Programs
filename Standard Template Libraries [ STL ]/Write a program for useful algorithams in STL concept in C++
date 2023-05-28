@@ -1,0 +1,60 @@
+#include<iostream>
+#include<algorithm>                    //Header file must be included
+#include<vector>
+using namespace std;
+
+int main()
+{
+    vector<int>v;                   // declaration of vector
+
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(6);
+    v.push_back(7);
+
+
+    cout<<"Finding 1 : "<<binary_search(v.begin(),v.end(),1)<<endl;              // Called binary search function
+
+    cout<<"Lower Bound : "<<lower_bound(v.begin(),v.end(),6)-v.begin()<<endl;    //for lowerbound
+    cout<<"Upper Bound : "<<upper_bound(v.begin(),v.end(),4)-v.begin()<<endl;    // for upperbound
+
+    int a = 3;
+    int b = 4;
+
+    cout<<"Max : "<<max(a,b)<<endl;                                              // for maximums elements
+    cout<<"Min : "<<min(a,b)<<endl;                                              // mimimum elements
+
+
+    swap(a,b);
+    cout<<"a : "<<a<<endl;                                                     //for swaping the elements
+     cout<<"b : "<<b<<endl;              
+
+    string s = "MOHIT";                                                      
+    reverse(s.begin(),s.end());                                                //for reverse the string
+    cout<<"String : "<<s<<endl;
+
+    cout<<"Bwefore Rotate : "<<endl;                                          // for rotate the elements
+    rotate(v.begin(),v.begin()+1,v.end());
+    cout<<" After Rotate : "<<endl;
+
+    for(auto i : v)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+    cout<<"After Sorting : "<<endl;
+
+
+    sort(v.begin(),v.end());
+     for(auto i : v)
+    {
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+
+    return 0;
+
+}
