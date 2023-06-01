@@ -1,0 +1,18 @@
+#include<iostream>
+#include<ios>
+using namespace std;
+
+int main()
+{
+    int roll_no=10;
+    char name[] = "Mohit";
+    char Data[20]; //Data Buffer for stream object
+    
+    ostrstream memobj(Data,20); //Create a steam object
+    memobj<<"Roll No = "<<roll_no
+          <<setw(10)
+          <<"Name = "<<name
+          <<'\0';
+    cout<<Data;
+    return 0;
+}
