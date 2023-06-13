@@ -1,0 +1,128 @@
+// Restore the BST From Discard BST
+
+#include<iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    struct node*left ;
+    struct node*right  ;
+
+    node(int val)
+    {
+        data = val;
+        left = NULL;
+        right =NULL;
+
+    }
+};
+
+void swap(int*a,int*b)                             // Swap Function
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void calPointers(node*root,node**first,node**mid,node**last,node**prev)   // function to give information of Discard BST to Restore Function
+{
+    if(root == NULL)
+    {
+        return ;
+    }
+
+    calPointers(root->left,first,mid,last,prev);
+
+    if(*prev &&root->data <(*prev)->data)
+    {
+        if(!first)
+        {
+            *first = *prev;
+            *mid = root;
+
+        }
+        else{
+            *last = root;
+        }
+    }
+
+    *prev = root;
+
+    calPointers(root->right,first,mid,last,prev);
+    if(*prev &&root->data <(*prev)->data)
+    {
+        if(!first)
+        {
+            *first = *prev;
+            *mid = root;
+
+        }
+        else{
+            *last = root;
+        }
+    }
+}
+
+void restoreBST(node*root)                            // Restor Function
+{
+    node*first ,*mid,*last,*prev; 
+    first = NULL;
+    mid = NULL;
+    last = NULL ;
+    prev = NULL;
+
+    calPointers(root,&first,&mid,&last,&prev);
+
+    //case 1 :- swap first and last
+    if(first && last)
+    {
+        swap(&(first->data),&(last->data));
+    }
+
+    //case 2 :- swap first and mid
+    else if(first && mid)
+    {
+        swap(&(first->data),&(mid->data));
+    }
+
+}
+void inorder(node*root)                                     // Inorder function to print the BST and also understand the UNcertinity in BST
+{
+    if(root == NULL)
+    {
+        return ;
+    }
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right);
+}
+
+int main()                                              // Main Function 
+{
+    /*
+            6
+           / \
+          9   3
+         / \   \
+        1   4   13
+    */
+    
+    node*root   = new node(6);
+    root->left  = new node(9);
+    root->right = new node(3);
+    root->left->left = new node(1);
+    root->left->right = new node(4);
+    root->right->right = new node(13);
+
+    cout<<"Before Swap : "<<endl;
+    inorder(root);
+    cout<<endl;
+    restoreBST(root);                                 // Calling the Redstore BST function
+    cout<<"After Swap : "<<endl;
+    inorder(root);
+    cout<<endl;
+
+    return 0;
+
+}
