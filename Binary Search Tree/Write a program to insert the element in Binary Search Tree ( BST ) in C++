@@ -1,0 +1,85 @@
+#include<iostream>
+using namespace std;
+
+struct node                                //Node creation Stucture
+{
+    int data;
+    node*left;
+    node*right;
+
+    node(int val)
+    {
+        data = val;
+        left =NULL;
+        right =NULL;
+    }
+};
+
+node*inserttoBST(node*root,int val                     // Insert Function 
+{ 
+    if(root==NULL)
+    {
+        return  new node(val);
+    }
+    if(val<root->data)
+    {
+        root->left = inserttoBST(root->left,val);
+    }
+    else
+    {
+        root->right = inserttoBST(root->right,val);
+    }
+
+    return root;
+
+}
+
+
+void preorder(node*root)                    //Preorder Traversal Function
+{
+    if(root ==NULL)
+    {
+        return ;
+    }
+    cout<<root->data<<" ";
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void inordear(node*root)
+{
+    if(root ==NULL)
+    {
+        return ;
+    }
+    inordear(root->left);
+    cout<<root->data<<" ";
+    inordear(root->right);
+}
+
+
+int main()                                   // Main Function to Execute the Program
+{
+    node*root = NULL;
+    
+    preorder(root);
+    root = inserttoBST(root,5);
+    inserttoBST(root,1);
+    inserttoBST(root,3);
+    inserttoBST(root,4);
+    inserttoBST(root,2);
+    inserttoBST(root,7);
+    inserttoBST(root,6);
+    inserttoBST(root,8);
+
+    cout<<"Preorder of BST : "<<endl;
+    preorder(root);
+    cout<<endl;
+    cout<<"Inorder of BST : "<<endl;
+    inordear(root);
+    cout<<endl;
+
+  
+
+}
+
