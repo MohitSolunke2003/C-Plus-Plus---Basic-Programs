@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+
+void printspell(int n,string str[])
+{
+    if(n==0)
+    {
+        return;
+    }
+    printspell(n/10,str);
+    cout<<str[n%10]<<" ";
+    
+}
+int main()
+{
+    int n;
+    cout<<"Enter the Number n : ";
+    cin>>n;
+    
+    string str[10] = { "Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+    cout<<"Answer is : ";
+    printspell(n,str);
+    
+}
