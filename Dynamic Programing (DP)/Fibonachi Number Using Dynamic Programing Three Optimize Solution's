@@ -1,0 +1,48 @@
+// These apporch Using Dp Memoization 
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int f(int n,vector<int>&dp)
+{ 
+    if(n<=1) return n;
+    if(dp[n] != -1) return dp[n];
+
+    return dp[n] = f(n-1,dp) +f(n-2,dp);
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the Value of n :";
+    cin>>n;
+    vector<int>dp(n+1,-1);
+    cout<<f(n,dp);
+
+}
+
+
+//// These apporch Using Dp Tabulation to Decrease the Space Complexity of a code
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter the Value of n :";
+    cin>>n;
+    vector<int>dp(n+1);
+    int prev2 = 0;
+    int prev = 1;
+    for(int i=2;i<=n;i++)
+    {
+        int curri = prev +prev2;
+        prev2 = prev;
+        prev = curri;
+    }
+    cout<<prev<<endl;
+
+}
