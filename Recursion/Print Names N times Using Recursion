@@ -1,0 +1,18 @@
+// Print the Name N times Using Recurision
+
+#include <iostream>
+using namespace std;
+
+void f(int i,int m)
+{
+    if(i>m) return ;
+    cout<<"Mohit"<<endl;
+    f(i+1,m);
+}
+int main()
+{
+    int m;
+    cout<<"Enter the Value of n : ";
+    cin>>m;
+    f(1,m);
+}
