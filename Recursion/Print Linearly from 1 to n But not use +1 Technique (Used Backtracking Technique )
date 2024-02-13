@@ -1,0 +1,19 @@
+// Print Linearly from 1 to n But not use +1 Technique (Used Backtracking Technique )
+
+#include <iostream>
+using namespace std;
+
+void f(int i,int m)
+{
+    if(i<1) return ;
+    f(i-1,m);
+    cout<<i<<endl;
+    
+}
+int main()
+{
+    int m;
+    cout<<"Enter the Value of n : ";
+    cin>>m;
+    f(m,m);
+}
