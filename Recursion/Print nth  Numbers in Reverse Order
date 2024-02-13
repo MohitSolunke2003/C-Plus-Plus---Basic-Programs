@@ -1,0 +1,18 @@
+// Print Linearly from 1 to n
+
+#include <iostream>
+using namespace std;
+
+void f(int i,int m)
+{
+    if(i<1) return ;
+    cout<<i<<endl;
+    f(i-1,m);
+}
+int main()
+{
+    int m;
+    cout<<"Enter the Value of n : ";
+    cin>>m;
+    f(m,m);
+}
