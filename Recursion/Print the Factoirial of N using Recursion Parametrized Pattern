@@ -1,0 +1,21 @@
+// Print the Factoirial of N using Recursion Parametrized Pattern
+
+#include<iostream>
+using namespace std;
+
+void fact(int i,int factorial)
+{
+    if(i<1)
+    {
+        cout<<factorial<<endl;
+        return ;
+    
+    }
+    fact(i-1,factorial *i);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    fact(n,1);
+}
