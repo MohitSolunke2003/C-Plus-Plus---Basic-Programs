@@ -1,0 +1,24 @@
+// Check th eWhether thr given String will Palindrom or not
+
+
+#include<iostream>
+#include<string>
+#include<bits/stdc++.h>
+
+bool Palindrom(int i,string &s)
+{
+    if(i> s.size() /2) return true;
+    if(s[i] != s.size()-i-1) return false;
+    return Palindrome(i+1,s);
+    
+   
+    
+}
+int main()
+{
+    string s;
+    cout<<"Enter the String : ";
+    cin>>s;
+    cout<<"Given String is Palindrome or not : "<<Palindrom(0,s)<<endl;
+    
+}
