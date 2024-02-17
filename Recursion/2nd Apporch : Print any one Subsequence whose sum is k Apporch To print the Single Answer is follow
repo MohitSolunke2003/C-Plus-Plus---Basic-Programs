@@ -1,0 +1,45 @@
+//2nd Apporch : Print any one Subsequence whose sum is k Apporch To print the Single Answer is follow 
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+bool flag = false;
+bool printF(int i,vector<int>&ds,int s,int sum,int arr[],int n)
+{
+    if(i == n)
+    
+    {   //if the condition become true 
+        if(s==sum)
+        { 
+        for(auto i : ds) cout<<i<<" ";
+        cout<<endl;
+        return true;
+        
+        }
+        else return false;;
+        
+    }
+    
+    ds.push_back(arr[i]);
+    s+=arr[i];
+    
+    // Pick 
+    if(printF(i+1,ds,s,sum,arr,n) == true ) return true;
+    s-=arr[i];
+    ds.pop_back();
+    
+    //Not Pick 
+    if(printF(i+1,ds,s,sum,arr,n)== true)return true;
+    
+    return false;
+    
+}
+int main()
+{
+    int arr[] = {1,2,1};
+    int n = 3;
+    int sum = 2;
+    vector<int>ds;
+    printF(0,ds,0,sum,arr,n);
+}
