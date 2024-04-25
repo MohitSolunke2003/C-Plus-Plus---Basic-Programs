@@ -1,0 +1,41 @@
+#pragma GCC optimize("O3", "unroll-loops")
+class Solution {
+public:
+    constexpr static int N=26;
+    int segTree[4*N];// segment tree for seq[26]
+
+    void update(int index, int left, int right, int pos, int x) {
+        if (left == right) {
+            segTree[index] = x;
+            return;
+        }
+        int mid = (left + right) / 2;
+        if (pos <= mid)
+            update(2*index+1, left, mid, pos, x);
+        else
+            update(2*index+2, mid+1, right, pos, x);
+        segTree[index] = max(segTree[2*index+1], segTree[2*index+2]);
+    }
+
+    int query(int index, int left, int right, int l, int r) {
+        if (left >= l && right <= r)
+            return segTree[index];
+        if (left > r || right < l)
+            return 0;
+        int mid = (left + right) / 2;
+        return max(query(2*index+1, left, mid, l, r),
+                   query(2*index+2, mid+1, right, l, r));
+    }
+
+    int longestIdealString(string& s, int k) {
+        int ans=0;
+        for (char c : s) {
+            int i=c-'a';
+            //find the longest seq ending at char(j+'a') in O(log 26)
+            int x = query(0, 0, N-1, max(0, i-k), min(N-1, i+k));
+            ans = max(ans, x + 1);
+            update(0, 0, N-1, i, x+1);//Update seq[i]=x+1 in segment tree
+        }
+        return ans;
+    }
+};
