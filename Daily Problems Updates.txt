@@ -1,0 +1,9 @@
+16 feb -Friday
+
+1)
+2)Print the Nth Number Fibonachhi Number using Mnultiple Recursion Cal
+3) Print the all possible Subsequence from the given array using Recursion call
+
+
+1 march - friday
+Maximum Odd Binary Number
